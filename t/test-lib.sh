@@ -1386,11 +1386,11 @@ export HOME GNUPGHOME
 
 # "rm -rf" existing trash directory, even if a previous run left it
 # with bad permissions.
-remove_trash_directory() {
+remove_trash_directory () {
 	dir="$1"
 	if ! rm -rf "$dir" 2>/dev/null
 	then
-		chmod -R u+wx "$dir"
+		chmod -R u+rwx "$dir"
 		rm -rf "$dir"
 	fi
 	! test -d "$dir"
