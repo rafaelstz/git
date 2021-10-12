@@ -6,6 +6,11 @@ test_description='git mktag: tag object verify test'
 
 . ./test-lib.sh
 
+# When enabled, some commands will automatically write commit-graphs.
+# This will cause the mktag tests to fail because fsck will attempt to
+# verify the out-of-sync commit graph.
+GIT_TEST_COMMIT_GRAPH=0
+
 ###########################################################
 # check the tag.sig file, expecting verify_tag() to fail,
 # and checking that the error message matches the pattern
