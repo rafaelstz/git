@@ -5,6 +5,7 @@
 
 test_description='Test of git add, including the -- option.'
 
+TEST_PASSES_SANITIZE_LEAK=true
 . ./test-lib.sh
 
 . $TEST_DIRECTORY/lib-unique-files.sh
